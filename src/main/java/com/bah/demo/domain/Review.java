@@ -1,4 +1,4 @@
-package domain;
+package com.bah.demo.domain;
 
 import java.util.Date;
 import java.util.Objects;

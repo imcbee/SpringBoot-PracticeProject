@@ -1,7 +1,6 @@
-package domain;
+package com.bah.demo.domain;
     
 
-import domain.Products;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
