@@ -1,4 +1,5 @@
 package domain;
+    
 
 import domain.Products;
 import lombok.AllArgsConstructor;
@@ -30,3 +31,4 @@ public class User {
     private List<Products> products;
 
 }
+
