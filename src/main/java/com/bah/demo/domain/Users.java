@@ -1,7 +1,6 @@
-package domain;
+package com.bah.demo.domain;
     
 
-import domain.Products;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +13,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Users {
 
     private String username;
 
