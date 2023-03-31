@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Objects;
 
 // @Document(collection = "review")
-public class Review {
+public class Reviews {
 	
 	// @Id
 	private long id;
@@ -21,7 +21,7 @@ public class Review {
 	
 	private String userReview;
 
-	public Review(long id, String userName, Date reviewDate, String productCode, String title,
+	public Reviews(long id, String userName, Date reviewDate, String productCode, String title,
 			String productDescription, String userReview) {
 		super();
 		this.id = id;
@@ -109,7 +109,7 @@ public class Review {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Review other = (Review) obj;
+		Reviews other = (Reviews) obj;
 		return id == other.id && Objects.equals(productCode, other.productCode)
 				&& Objects.equals(productDescription, other.productDescription)
 				&& Objects.equals(reviewDate, other.reviewDate) && Objects.equals(title, other.title)
