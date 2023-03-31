@@ -20,7 +20,7 @@ public class Products {
     private Integer rating;
     private String pictureURL;
 
-    private List<Review> productReviews;
+    private List<Reviews> productReviews;
 
     // Default Constructor
     public Products() {
@@ -100,11 +100,11 @@ public class Products {
         this.pictureURL = pictureURL;
     }
 
-    public List<Review> getProductReviews() {
+    public List<Reviews> getProductReviews() {
         return productReviews;
     }
 
-    public void setProductReviews(List<Review> productReviews) {
+    public void setProductReviews(List<Reviews> productReviews) {
         this.productReviews = productReviews;
     }
 
@@ -116,8 +116,5 @@ public class Products {
                 + available + ", price=" + price + ", rating=" + rating + ", pictureURL=" + pictureURL
                 + ", productReviews=" + productReviews + "]";
     }
-
-    
-    
 
 }
