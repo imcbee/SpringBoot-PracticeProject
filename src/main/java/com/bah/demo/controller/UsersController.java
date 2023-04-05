@@ -1,4 +1,4 @@
-package controller;
+package com.bah.demo.controller;
 
 import java.util.List;
 
@@ -16,7 +16,6 @@ public class UsersController {
     
     @Autowired
     UsersService usersService;
-
 
     @GetMapping
     public List<Users> getAll() {

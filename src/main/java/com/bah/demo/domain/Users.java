@@ -1,13 +1,12 @@
 package com.bah.demo.domain;
     
+import java.time.LocalDate;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.time.Instant;
-import java.util.List;
 
 @Getter
 @Setter
@@ -21,11 +20,11 @@ public class Users {
 
     private String lastName;
 
-    private Instant dateOfBirth; // necessary?
+    private LocalDate dateOfBirth; // necessary?
 
     private String password; // necessary?
 
-    private Instant registrationDate; // necessary?
+    private LocalDate registrationDate; // necessary?
 
     private List<Products> products;
 
