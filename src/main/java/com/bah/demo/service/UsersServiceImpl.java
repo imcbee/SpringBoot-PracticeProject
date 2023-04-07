@@ -20,4 +20,10 @@ public class UsersServiceImpl implements UsersService {
     }
 
     //! --------------------------- getAll ---------------------------
+
+    //! --------------------------- createUser ---------------------------
+    public Users createUser(Users user) {
+        return userRepo.save(user);
+    }
+    //! --------------------------- createUser ---------------------------
 }

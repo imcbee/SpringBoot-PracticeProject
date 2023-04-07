@@ -6,4 +6,5 @@ import com.bah.demo.domain.Users;
 
 public interface UsersService {
     public List<Users> getAll();
+    public Users createUser(Users user);
 }

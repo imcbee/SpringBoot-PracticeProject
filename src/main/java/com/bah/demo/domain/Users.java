@@ -3,16 +3,27 @@ package com.bah.demo.domain;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.mongodb.lang.Nullable;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
+@Document(collection = "users")
 public class Users {
+
+    @Id
+    private String id;
 
     private String username;
 
@@ -26,6 +37,7 @@ public class Users {
 
     private LocalDate registrationDate; // necessary?
 
+    @Nullable
     private List<Products> products;
 
 }

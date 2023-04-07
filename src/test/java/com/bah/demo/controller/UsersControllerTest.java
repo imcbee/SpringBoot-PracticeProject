@@ -33,6 +33,7 @@ public class UsersControllerTest {
         List<Users> usersList = new ArrayList<>();
         usersList.add(
             new Users(
+                "dee11d4e-63c6-4d90-983c-5c9f1e79e96c",
                 "cooluser123", 
                 "John", 
                 "Smith", 
