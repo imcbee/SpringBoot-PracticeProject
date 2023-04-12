@@ -4,12 +4,15 @@ package com.bah.demo.domain;
 import java.util.Date;
 import java.util.List;
 
-//@Document
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "products")
 public class Products {
 
     // variables
-    //@Id
-    private Long id;
+    @Id
+    private String id;
 
     private String productName;
     private String productDescription;
@@ -28,11 +31,11 @@ public class Products {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
