@@ -10,4 +10,6 @@ public interface ProductsService {
     public Products getById(String id);
     
     public Products createProduct(Products product);
+
+    public Products updateProduct(Products product);
 }
