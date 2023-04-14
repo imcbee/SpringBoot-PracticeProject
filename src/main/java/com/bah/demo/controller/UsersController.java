@@ -45,7 +45,7 @@ public class UsersController {
     }    
 
     @PostMapping
-    public ResponseEntity<Users> createUser(@RequestBody Users user, UriComponentsBuilder uri) {
+    public ResponseEntity<Void> createUser(@RequestBody Users user, UriComponentsBuilder uri) {
         // get user from request (json is mapped by spring to our domain class)
         // call the service method to save our user to the mongo db
         user = usersService.createUser(user);
@@ -55,18 +55,18 @@ public class UsersController {
             .buildAndExpand(user.getId())
             .toUri();
         // create the response entity with the 201 created status and a location header
-        ResponseEntity<Users> response = ResponseEntity.created(location).build();
+        ResponseEntity<Void> response = ResponseEntity.created(location).build();
         // return http response
         return response;
     }    
     
     @PutMapping("/{id}")
-    public ResponseEntity<Users> updateUser(@PathVariable String id, @RequestBody Users user, UriComponentsBuilder uri) {
+    public ResponseEntity<Void> updateUser(@PathVariable String id, @RequestBody Users user, UriComponentsBuilder uri) {
         user.setId(id);
         user = usersService.updateUser(user);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().build().toUri();
-        ResponseEntity<Users> response = ResponseEntity
+        ResponseEntity<Void> response = ResponseEntity
             .ok()
             .header("location", location.toString())
             .build();
