@@ -36,6 +36,9 @@ public class Products {
     private String pictureURL;
 
     @DBRef
+    Users user;
+
+    @DBRef
     private List<Reviews> productReviews;
 
    
