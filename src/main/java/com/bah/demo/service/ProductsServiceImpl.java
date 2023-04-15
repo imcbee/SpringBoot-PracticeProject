@@ -35,5 +35,14 @@ public class ProductsServiceImpl implements ProductsService{
         return productsRepo.save(product);
     };
 
+    @Override
+    public void deleteProductById(String id) {
+        if(id != null) {
+            productsRepo.deleteById(id);
+        }else {
+            new ProductNotFoundException(id);
+        }
+        
+    }
 
 }
