@@ -3,7 +3,6 @@ package com.bah.demo.dto;
 import org.springframework.stereotype.Component;
 
 import com.bah.demo.domain.Users;
-import com.bah.demo.domain.UsersDto;
 
 @Component
 public class Mapper {
@@ -20,4 +19,20 @@ public class Mapper {
         );
         
     }
+
+    public Users fromDto(UsersDto userDto) {
+
+        return new Users(
+            userDto.getId(),
+            userDto.getUsername(),
+            userDto.getFirstName(),
+            userDto.getLastName(),
+            userDto.getDateOfBirth(),
+            null,
+            null,
+            userDto.getProducts()
+        );
+        
+    }
+    
 }
