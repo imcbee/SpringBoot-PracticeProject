@@ -31,11 +31,11 @@ public class Users {
 
     private String lastName;
 
-    private LocalDate dateOfBirth; // necessary?
+    private LocalDate dateOfBirth;
 
-    private String password; // necessary?
+    private String password;
 
-    private LocalDate registrationDate; // necessary?
+    private LocalDate registrationDate;
 
     @Nullable
     private List<Products> products;
