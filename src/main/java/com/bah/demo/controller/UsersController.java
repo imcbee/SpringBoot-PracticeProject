@@ -2,6 +2,7 @@ package com.bah.demo.controller;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -96,7 +97,7 @@ public class UsersController {
 
         List<UsersDto> userDtos = users.stream()
             .map(mapper::toDto)
-            .toList();
+            .collect(Collectors.toList());
         
         return new ResponseEntity<>(userDtos, HttpStatus.OK);
     }
