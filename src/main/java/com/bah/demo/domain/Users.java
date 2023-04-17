@@ -3,7 +3,10 @@ package com.bah.demo.domain;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.mongodb.lang.Nullable;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +19,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+<<<<<<< HEAD
 @Document("users")
 public class Users {
 
@@ -25,6 +29,15 @@ public class Users {
 	}
 
 	private String username;
+=======
+@Document(collection = "users")
+public class Users {
+
+    @Id
+    private String id;
+
+    private String username;
+>>>>>>> 5bd7af941fbffb5349b4666b15f90d0ce49a1e98
 
     private String firstName;
 
@@ -36,6 +49,7 @@ public class Users {
 
     private LocalDate registrationDate; // necessary?
 
+    @Nullable
     private List<Products> products;
 
 }

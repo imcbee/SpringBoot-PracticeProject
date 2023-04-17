@@ -16,7 +16,7 @@ import lombok.ToString;
 @ToString
 public class Reviews {
 	
-	 @Id
+	@Id
 	private long id;
 	
 	private String userName;
