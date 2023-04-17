@@ -50,7 +50,7 @@ public class UsersServiceImpl implements UsersService {
     //! --------------------------- deleteById ---------------------------
     @Override
     public void deleteById(String id) {
-        if (!id.isBlank()) {
+        if (id != null) {
             userRepo.deleteById(id);
         }
         // else null User.id does not exist. No delete necessary
@@ -75,7 +75,7 @@ public class UsersServiceImpl implements UsersService {
      * @return true for valid Users
      */
     private Boolean validateUser(Users user) {
-        if (user == null || user.getId() == null || user.getId().isBlank()) {
+        if (user == null || user.getId() == null) {
             throw new UserNotFoundException("NULL");
         }
 
