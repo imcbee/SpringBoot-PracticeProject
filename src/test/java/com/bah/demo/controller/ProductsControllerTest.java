@@ -19,7 +19,7 @@ import com.bah.demo.domain.Products;
 import com.bah.demo.dto.ProductsMapper;
 import com.bah.demo.service.ProductsService;
 
-@WebMvcTest
+@WebMvcTest(ProductsController.class)
 public class ProductsControllerTest {
     @Autowired
     private MockMvc mockMvc;
