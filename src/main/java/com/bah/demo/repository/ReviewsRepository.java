@@ -4,6 +4,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.bah.demo.domain.Reviews;
 
-public interface ReviewsRepository extends MongoRepository <Reviews, Long> {
+public interface ReviewsRepository extends MongoRepository <Reviews, String> {
 
 }

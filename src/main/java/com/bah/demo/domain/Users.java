@@ -19,6 +19,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+
 @Document(collection = "users")
 public class Users {
 
@@ -39,6 +40,5 @@ public class Users {
 
     @Nullable
     private List<Products> products;
-
 }
 
