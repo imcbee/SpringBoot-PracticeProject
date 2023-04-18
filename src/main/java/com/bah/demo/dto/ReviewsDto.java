@@ -1,4 +1,4 @@
-package com.bah.demo.domain;
+package com.bah.demo.dto;
 
 import java.util.Date;
 
@@ -7,8 +7,9 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
+
 public class ReviewsDto {
-	private long id;
+	private String id;
 	
 	private String userName;
 	
@@ -21,4 +22,5 @@ public class ReviewsDto {
 	private String productDescription;
 	
 	private String userReview;
+	
 }

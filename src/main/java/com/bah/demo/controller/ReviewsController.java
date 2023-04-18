@@ -2,6 +2,7 @@ package com.bah.demo.controller;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,8 +17,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.bah.demo.domain.Reviews;
-import com.bah.demo.domain.ReviewsDto;
-import com.bah.demo.dto.Mapper;
+import com.bah.demo.dto.ReviewsDto;
+import com.bah.demo.dto.ReviewsMapper;
 import com.bah.demo.service.ReviewsService;
 
 @RestController
@@ -28,7 +29,7 @@ public class ReviewsController {
 	ReviewsService reviewsService;
 
 	@Autowired
-	Mapper mapper;
+	ReviewsMapper mapper;
 
 	@GetMapping
     public List<Reviews> getAll() {
@@ -57,7 +58,7 @@ public class ReviewsController {
 	public ResponseEntity<List<ReviewsDto>> getAllDto() {
 		List<Reviews> reviews = reviewsService.getAll();
 
-		List<ReviewsDto> reviewsDtos = reviews.stream().map(mapper::toDto).toList();
+		List<ReviewsDto> reviewsDtos = reviews.stream().map(mapper::toDto).collect(Collectors.toList());
 
 		return new ResponseEntity<>(reviewsDtos, HttpStatus.OK);
 	}

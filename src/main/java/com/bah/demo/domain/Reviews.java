@@ -3,21 +3,24 @@ package com.bah.demo.domain;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-// @Document(collection = "review")
+@Document(collection = "reviews")
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
 public class Reviews {
 	
 	@Id
-	private long id;
+	private String id;
 	
 	private String userName;
 	
@@ -31,9 +34,9 @@ public class Reviews {
 	
 	private String userReview;
 	
-	public Reviews() {
-		
-	}
+//	public Reviews() {
+//		
+//	}
 
 //	public Reviews(long id, String userName, Date reviewDate, String productCode, String title,
 //			String productDescription, String userReview) {

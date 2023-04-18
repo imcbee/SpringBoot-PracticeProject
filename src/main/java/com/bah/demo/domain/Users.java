@@ -19,17 +19,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-<<<<<<< HEAD
-@Document("users")
-public class Users {
 
-    public Users(String string, String string2, String string3, LocalDate of, String string4, LocalDate of2,
-			Object object) {
-		// TODO Auto-generated constructor stub
-	}
-
-	private String username;
-=======
 @Document(collection = "users")
 public class Users {
 
@@ -37,20 +27,18 @@ public class Users {
     private String id;
 
     private String username;
->>>>>>> 5bd7af941fbffb5349b4666b15f90d0ce49a1e98
 
     private String firstName;
 
     private String lastName;
 
-    private LocalDate dateOfBirth; // necessary?
+    private LocalDate dateOfBirth;
 
-    private String password; // necessary?
+    private String password;
 
-    private LocalDate registrationDate; // necessary?
+    private LocalDate registrationDate;
 
     @Nullable
     private List<Products> products;
-
 }
 
