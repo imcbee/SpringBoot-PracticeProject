@@ -1,7 +1,7 @@
 package com.bah.demo.controller;
 
 import static org.mockito.Mockito.when;
-import static  org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -19,7 +19,7 @@ import com.bah.demo.domain.Products;
 import com.bah.demo.dto.ProductsMapper;
 import com.bah.demo.service.ProductsService;
 
-@WebMvcTest
+@WebMvcTest(ProductsController.class)
 public class ProductsControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -35,43 +35,38 @@ public class ProductsControllerTest {
         List<Products> productsList = new ArrayList<>();
 
         productsList.add(
-            new Products(
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null
-            )
-        );
+                new Products(
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null));
         productsList.add(
-            new Products(
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null, 
-                null
-            )
-        );
+                new Products(
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null));
 
         when(productsService.getAll()).thenReturn(productsList);
 
         mockMvc.perform(get("/products"))
-            .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.length()").value(2));
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()").value(2));
     }
-
 
 }
