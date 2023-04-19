@@ -20,6 +20,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+
 @Document(collection = "users")
 public class Users {
 
@@ -40,5 +41,4 @@ public class Users {
 
     @DBRef
     private List<Products> products;
-
 }
