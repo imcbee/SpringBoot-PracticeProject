@@ -1,12 +1,13 @@
 package com.bah.demo.domain;
 
-
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -36,11 +37,10 @@ public class Products {
     private String pictureURL;
 
     @DBRef
+    // @JsonIgnore
     Users user;
 
     @DBRef
     private List<Reviews> productReviews;
-
-   
 
 }

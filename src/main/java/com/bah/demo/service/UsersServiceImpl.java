@@ -6,38 +6,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
+import com.bah.demo.domain.Products;
 import com.bah.demo.domain.Users;
 import com.bah.demo.exception.UserNotFoundException;
 import com.bah.demo.repository.UsersRepository;
 
 @Service
 public class UsersServiceImpl implements UsersService {
-    
+
     @Autowired
     UsersRepository userRepo;
 
-    //! --------------------------- getAll ---------------------------
+    // ! --------------------------- getAll ---------------------------
     @Override
     public List<Users> getAll() {
         return userRepo.findAll();
     }
-    //! --------------------------- /getAll ---------------------------
+    // ! --------------------------- /getAll ---------------------------
 
-    //! --------------------------- getById ---------------------------
+    // ! --------------------------- getById ---------------------------
     @Override
     public Users getById(String id) {
         return getExistingUserById(id);
     }
-    //! --------------------------- /getById ---------------------------
+    // ! --------------------------- /getById ---------------------------
 
-    //! --------------------------- createUser ---------------------------
+    // ! --------------------------- createUser ---------------------------
     @Override
     public Users createUser(Users user) {
         return userRepo.save(user);
     }
-    //! --------------------------- /createUser ---------------------------
+    // ! --------------------------- /createUser ---------------------------
 
-    //! --------------------------- updateUser ---------------------------
+    // ! --------------------------- updateUser ---------------------------
     @Override
     public Users updateUser(Users userUpdates) {
         validateUser(userUpdates);
@@ -45,9 +46,9 @@ public class UsersServiceImpl implements UsersService {
         existingUser = mergeUpdates(existingUser, userUpdates);
         return userRepo.save(existingUser);
     }
-    //! --------------------------- /updateUser ---------------------------
-    
-    //! --------------------------- deleteById ---------------------------
+    // ! --------------------------- /updateUser ---------------------------
+
+    // ! --------------------------- deleteById ---------------------------
     @Override
     public void deleteById(String id) {
         if (id != null) {
@@ -55,9 +56,9 @@ public class UsersServiceImpl implements UsersService {
         }
         // else null User.id does not exist. No delete necessary
     }
-    //! --------------------------- /deleteById ---------------------------
+    // ! --------------------------- /deleteById ---------------------------
 
-    //? --------------------------- Internal Methods ---------------------------
+    // ? --------------------------- Internal Methods ---------------------------
     /**
      * Returns {@link Users} if id exists, else throws {@link UserNotFoundException}
      * 
@@ -85,7 +86,7 @@ public class UsersServiceImpl implements UsersService {
     /**
      * sets user fields to nonnull values in updates
      * 
-     * @param user - base {@link Users} to update
+     * @param user    - base {@link Users} to update
      * @param updates - updates to apply to user
      * @return {@link Users} with updates applied
      */

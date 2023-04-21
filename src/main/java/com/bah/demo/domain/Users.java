@@ -1,9 +1,10 @@
 package com.bah.demo.domain;
-    
+
 import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.mongodb.lang.Nullable;
@@ -38,7 +39,6 @@ public class Users {
 
     private LocalDate registrationDate;
 
-    @Nullable
+    @DBRef
     private List<Products> products;
 }
-
